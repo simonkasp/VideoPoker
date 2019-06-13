@@ -1,0 +1,7 @@
+C:\Users\skeit\source\repos\VideoPoker\VideoPoker\bin\Debug\VideoPoker.exe.config
+C:\Users\skeit\source\repos\VideoPoker\VideoPoker\bin\Debug\VideoPoker.exe
+C:\Users\skeit\source\repos\VideoPoker\VideoPoker\bin\Debug\VideoPoker.pdb
+C:\Users\skeit\source\repos\VideoPoker\VideoPoker\obj\Debug\VideoPoker.csprojAssemblyReference.cache
+C:\Users\skeit\source\repos\VideoPoker\VideoPoker\obj\Debug\VideoPoker.csproj.CoreCompileInputs.cache
+C:\Users\skeit\source\repos\VideoPoker\VideoPoker\obj\Debug\VideoPoker.exe
+C:\Users\skeit\source\repos\VideoPoker\VideoPoker\obj\Debug\VideoPoker.pdb
