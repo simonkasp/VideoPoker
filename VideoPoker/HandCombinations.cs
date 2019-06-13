@@ -27,7 +27,7 @@ namespace VideoPoker
         public static bool IsPair(Card[] hand)
         {
             var checkQuery = hand.GroupBy(c => c.Value)
-                                  .Count(g => g.Count() == 2) == 1;
+                                 .Count(g => g.Count() == 2) == 1;
 
             return checkQuery;
         }
@@ -37,7 +37,7 @@ namespace VideoPoker
         public static bool IsTwoPair(Card[] hand)
         {
             var checkQuery = hand.GroupBy(c => c.Value)
-                             .Count(g => g.Count() >= 2) == 2;
+                                 .Count(g => g.Count() >= 2) == 2;
 
             return checkQuery;
 
@@ -46,7 +46,7 @@ namespace VideoPoker
         public static bool IsThreeOfAKind(Card[] hand)
         {
             var checkQuery = hand.GroupBy(c => c.Value)
-                                  .Any(g => g.Count() == 3);
+                                 .Any(g => g.Count() == 3);
 
             return checkQuery;
         }
@@ -76,7 +76,7 @@ namespace VideoPoker
         public static bool IsFlush(Card[] hand)
         {
             var checkQuery = hand.GroupBy(c => c.Suit)
-                                  .Count(g => g.Count() >= 5) == 1;
+                                 .Count(g => g.Count() >= 5) == 1;
 
             return checkQuery;
         }
@@ -89,7 +89,7 @@ namespace VideoPoker
         public static bool IsFourOfAKind(Card[] hand)
         {
             var checkQuery = hand.GroupBy(c => c.Value)
-                                  .Any(g => g.Count() == 4);
+                                 .Any(g => g.Count() == 4);
 
             return checkQuery;
         }
@@ -109,20 +109,22 @@ namespace VideoPoker
 
         public static bool IsJackOrBetter(Card[] hand)
         {
-            if (hand[0].Value == hand[1].Value &&
-                hand[0].Value == CardValue.Ace || hand[0].Value >= CardValue.Jack)
+            var sortHand = Sort(hand);
+
+            if ((sortHand[0].Value == sortHand[1].Value) &&
+                (sortHand[0].Value >= CardValue.Jack && sortHand[1].Value >= CardValue.Jack))
                 return true;
 
-            else if (hand[1].Value == hand[2].Value &&
-                    hand[1].Value == CardValue.Ace || hand[1].Value >= CardValue.Jack)
+            else if ((sortHand[1].Value == sortHand[2].Value) &&
+                    (sortHand[1].Value >= CardValue.Jack && sortHand[2].Value >= CardValue.Jack))
                 return true;
 
-            else if (hand[2].Value == hand[3].Value &&
-                    hand[2].Value == CardValue.Ace || hand[2].Value >= CardValue.Jack)
+            else if ((sortHand[2].Value == sortHand[3].Value) &&
+                    (sortHand[2].Value >= CardValue.Jack && sortHand[3].Value >= CardValue.Jack))
                 return true;
 
-            else if (hand[3].Value == hand[4].Value &&
-                    hand[3].Value == CardValue.Ace || hand[3].Value >= CardValue.Jack)
+            else if ((sortHand[3].Value == sortHand[4].Value) &&
+                    (sortHand[3].Value >= CardValue.Jack && sortHand[4].Value >= CardValue.Jack))
                 return true;
 
             return false;
